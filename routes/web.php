@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontendController;
 
@@ -16,7 +17,9 @@ use App\Http\Controllers\FrontendController;
 
 
 
-Route::get('/',[FrontendController::class,'index']);
+Route::get('/',[FrontendController::class,'index'])->name('index');
+Route::get('/about-us',[FrontendController::class,'aboutUs'])->name('about');
+Route::get('/contact-us',[FrontendController::class,'contactUs'])->name('contactus');
 
 Auth::routes();
 
